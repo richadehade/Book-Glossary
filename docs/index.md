@@ -12,8 +12,8 @@ Welcome to the Book Glossary for this repository.
 
 <p>
   - <a href="./glossary.md">Open the Glossary (overview)</a>
-  - <a href="./glossary-a-m.md">Glossary A–M</a>
-  - <a href="./glossary-n-z.md">Glossary N–Z</a>
+  - <a href="./glossary-a-n.md">Glossary A–M</a>
+  - <a href="./glossary-o-z.md">Glossary N–Z</a>
 </p>
 
 <script>
@@ -31,9 +31,9 @@ Welcome to the Book Glossary for this repository.
   function pageForLetter(letter) {
     const code = letter.charCodeAt(0);
     // A–M (65..77) -> glossary-a-m
-    if (code >= 65 && code <= 77) return './glossary-a-m';
+    if (code >= 65 && code <= 77) return './glossary-a-n';
     // N–Z -> glossary-n-z
-    return './glossary-n-z';
+    return './glossary-o-z';
   }
 
   // Helper to try likely paths and then navigate with anchor
