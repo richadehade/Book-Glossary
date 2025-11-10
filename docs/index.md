@@ -8,7 +8,7 @@ layout: default
 Welcome to the Book Glossary for this repository.
 
 <label for="letter-select">Jump to letter:</label>
-<select id="letter-select">
+<select id="letter-select" aria-label="Jump to letter">
   <option value="">Select a letter…</option>
 </select>
 
@@ -25,7 +25,6 @@ Welcome to the Book Glossary for this repository.
 
 <script>
 (function () {
-  // create A-Z options
   const select = document.getElementById('letter-select');
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   letters.forEach(function(letter) {
@@ -35,15 +34,39 @@ Welcome to the Book Glossary for this repository.
     select.appendChild(opt);
   });
 
-  // on change navigate to glossary + anchor
+  // Build anchor string the same way GitHub Pages/Jekyll typically does:
+  // single letters -> lowercase (e.g. A -> a). If your headings are more complex,
+  // use explicit IDs in glossary.md (see notes below).
   select.addEventListener('change', function() {
     const val = this.value;
     if (!val) return;
-    // navigate to glossary page with lowercase anchor (most markdown generators create lowercase ids)
-    window.location.href = './glossary.md#' + val.toLowerCase();
-  });
+    const anchor = '#' + val.toLowerCase();
 
-  // optional: pre-select if coming from a hash or query param
-  // (not necessary, but could be extended)
+    // Candidate resource paths (checked in order)
+    const candidates = [
+      './glossary.html',
+      './glossary/',
+      './glossary',     // some setups serve glossary as /glossary
+      './glossary.md'   // fallback (may 404 on Pages)
+    ];
+
+    // Try each candidate and navigate to the first that exists.
+    // We fetch without the fragment (fragment isn't sent to server).
+    (async function() {
+      for (const base of candidates) {
+        try {
+          const resp = await fetch(base, { method: 'GET' });
+          if (resp.ok) {
+            window.location.href = base + anchor;
+            return;
+          }
+        } catch (e) {
+          // ignore and try next candidate
+        }
+      }
+      // If none found, navigate to the README fallback (or the raw markdown)
+      window.location.href = './glossary.html' + anchor;
+    })();
+  });
 })();
 </script>
