@@ -7,4 +7,3 @@ Welcome to the Book Glossary for this repository.
 
 - [Open the Glossary](./glossary.md)
 
-If you maintain multiple content pages you can add a navigation or sidebar here.
