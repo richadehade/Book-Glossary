@@ -3,8 +3,6 @@ title: "Book Glossary"
 layout: default
 ---
 
-# Book Glossary
-
 Welcome — this page lists book-related terms and concise definitions. Add entries under the correct heading or alphabetically.
 
 ## Navigation
