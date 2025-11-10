@@ -14,29 +14,32 @@ Welcome — this page lists book-related terms and concise definitions. Add entr
 
 ## A
 
-### Appendix
-A section at the end of a book with supplementary information.
 
-### Availabe vs. Available
-(Typo example — replace with real entry.)
 
 ---
 
 ## B
 
-### Blurb
-A short description or promotional text for a book.
 
 ---
 
 ## C
 
-### Copyright page
-The page that shows copyright information, ISBN, publisher, and edition.
+---
+## D
+
+---
+## E
+
+---
+## F
 
 ---
 
-(Continue alphabetically. Use "### Term" followed by a short definition. You can also link terms to examples or other pages.)
-
+## G
+1) Guck - A slimy, sticky, unpleasant substance.
+2) 
 ---
+
+
 If you want a searchable glossary or tags, we can add a data file (YAML/JSON) and a small template to render it dynamically.
