@@ -38,7 +38,9 @@ Welcome — this page lists book-related terms and concise definitions. Add entr
 
 ## G
 1) Guck - A slimy, sticky, unpleasant substance.
+   ---
 2) 
+3) 
 ---
 
 
